@@ -1,1 +1,4 @@
 venv
+*.env
+config/*.env
+config/.pg_service
