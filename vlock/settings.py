@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Set environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -75,12 +79,12 @@ WSGI_APPLICATION = 'vlock.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS':{
-            'service': 'postgresql',
-            'passfile': '/run/secrets/postgres-pass',
-
-        }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': env('DATABASE_NAME', default='vlock'),
+        'USER': env('DATABASE_USER', default='vlock_user'),
+        'PASSWORD': env('DATABASE_PASSWORD', default='postgres'),
+        'HOST': env('DATABASE_HOST', default='localhost'),
+        'PORT': env('DATABASE_PORT', default='5432'),
     }
 }
 
