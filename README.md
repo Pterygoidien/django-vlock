@@ -10,6 +10,9 @@
 2. Django v4.23+
 3. Django-environ
 4. Django-tailwindCSS
+5. mysqlclient 1.4.3+ (DB Api Drivers for MariaDB/MySQL)
+6. Connector/Python 8.0.33+ (ORM : Mapping for MariaDB/MySQL (Relational Database) -> Django Models (Objects))
+   Note : Connector/Python === oracle = bad :(
 
 # Dépendances globales
 
