@@ -18,7 +18,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Set environment variables
 env = environ.Env()
-environ.Env.read_env()
+environ.Env.read_env(
+    env_file = str(BASE_DIR.joinpath('./config/database.env'))
+    
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -80,13 +83,15 @@ WSGI_APPLICATION = 'vlock.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DATABASE_NAME', default='vlock'),
-        'USER': env('DATABASE_USER', default='vlock_user'),
-        'PASSWORD': env('DATABASE_PASSWORD', default='postgres'),
+        'NAME': env('DATABASE_DB'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
         'HOST': env('DATABASE_HOST', default='localhost'),
-        'PORT': env('DATABASE_PORT', default='5432'),
+        'PORT': env('DATABASE_PORT', default=3306),
     }
 }
+
+
 
 
 # Password validation
