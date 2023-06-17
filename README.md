@@ -4,6 +4,7 @@
 2. Initialiser les variables d'environnement. Les variables d'environnement sont stockées dans config/. Les variables pour la base de données dans database.env doivent correspondre à celles de docker-compose.env.
    2.1 La base de donnée utilisée est MariaDB, qui sera souvent notée "MySQL" en raison des librairies partagées. (MariaDB est originellement MySQL avant l'acquisition de ce dernier par Oracle, ça n'est que la branche communautaire qui est maintenue)
 3. Initialiser les containeurs : docker-compose up -d
+4. Installer un environnement virtuel et les dépendances dans requirements.txt ("$ (venv) > pip install -r requirements.txt")
 
 # Dépendances librairies
 
@@ -11,8 +12,6 @@
 3. Django-environ
 4. Django-tailwindCSS
 5. mysqlclient 1.4.3+ (DB Api Drivers for MariaDB/MySQL)
-6. Connector/Python 8.0.33+ (ORM : Mapping for MariaDB/MySQL (Relational Database) -> Django Models (Objects))
-   Note : Connector/Python === oracle = bad :(
 
 # Dépendances globales
 
