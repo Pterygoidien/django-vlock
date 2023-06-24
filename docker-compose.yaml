@@ -2,18 +2,21 @@ version: "3"
 services:
   db:
     # image : mariadb:10.4.12
-    image : mariadb:10.4.12
+    image: mariadb:10.4.12
     restart: always
     env_file:
       - ./config/docker-compose.env
     volumes:
-      - ./data:/var/lib/mysql
+      - data:/var/lib/mysql
     networks:
       - vlock-network
     ports:
-      - 3306:3306
+      - 3312:3306
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 
 networks:
   vlock-network:
     driver: bridge
+
+volumes:
+  data:

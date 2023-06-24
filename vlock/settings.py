@@ -23,6 +23,8 @@ environ.Env.read_env(
     
 )
 
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -39,7 +41,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'apps.form',
-    'tailwind',
+    'subscription',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -86,7 +88,7 @@ WSGI_APPLICATION = 'vlock.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': env('DATABASE_DB'),
+        'NAME': env('DATABASE_NAME'),
         'USER': env('DATABASE_USER', default='root'),
         'PASSWORD': env('DATABASE_PASSWORD'),
         'HOST': env('DATABASE_HOST', default='localhost'),
