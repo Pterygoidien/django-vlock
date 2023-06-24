@@ -20,6 +20,6 @@ from .views import about
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('form/', include('apps.form.urls')),
     path('about/', about),
+    path('subscription/', include('subscription.urls')),
 ]
